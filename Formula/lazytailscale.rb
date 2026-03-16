@@ -5,21 +5,21 @@
 class Lazytailscale < Formula
   desc "A terminal dashboard for your Tailscale network"
   homepage "https://github.com/mogglemoss/lazytailscale"
-  version "1.0.1"
+  version "1.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.1/lazytailscale_darwin_amd64.tar.gz"
-      sha256 "b4f9337066f097bd86066227519c4371a529972af2b4954d812b1592d25d4f91"
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.2/lazytailscale_darwin_amd64.tar.gz"
+      sha256 "28d6c68ffc2695294147b78b0faf52733ef49dc127c752c94f9a6e102c8df455"
 
       define_method(:install) do
         bin.install "lazytailscale"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.1/lazytailscale_darwin_arm64.tar.gz"
-      sha256 "3c86f0ce013e32173227d47be3e5c2399d937b2a485aec2c470fefc83295733e"
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.2/lazytailscale_darwin_arm64.tar.gz"
+      sha256 "8fa8e90dcaa5867c3239863bfe39ec5c071369979c00c8fb83d4590f0fdffb36"
 
       define_method(:install) do
         bin.install "lazytailscale"
@@ -29,15 +29,15 @@ class Lazytailscale < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.1/lazytailscale_linux_amd64.tar.gz"
-      sha256 "4696fb89afd9e728e6087855e2d9307dc654c8a811007516f1ee9919c7300130"
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.2/lazytailscale_linux_amd64.tar.gz"
+      sha256 "86e66aa87b2c1b077f4cf839d0cd30e59674ff151bb9bc261b71d3e3fcddb062"
       define_method(:install) do
         bin.install "lazytailscale"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.1/lazytailscale_linux_arm64.tar.gz"
-      sha256 "7a4a41d455b6ac5f9e5b54f7e2658b188dd9ffd7e6c2a5a5c065902910d2aded"
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.2/lazytailscale_linux_arm64.tar.gz"
+      sha256 "33e9d063c2e0e9c74ca302672e8df237b9aab7902ba1dd9a48678bd9befa07f1"
       define_method(:install) do
         bin.install "lazytailscale"
       end
