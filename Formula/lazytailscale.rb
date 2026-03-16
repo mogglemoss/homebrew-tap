@@ -1,0 +1,39 @@
+# typed: false
+# frozen_string_literal: true
+
+class Lazytailscale < Formula
+  desc "A terminal dashboard for your Tailscale network"
+  homepage "https://github.com/mogglemoss/lazytailscale"
+  version "1.0.0"
+  license "MIT"
+
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.0/lazytailscale_darwin_amd64.tar.gz"
+      sha256 "b66b3df7fff275e5cf0c7c14ca6a5e6229a946a69528031dc9eda8557e74c366"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.0/lazytailscale_darwin_arm64.tar.gz"
+      sha256 "5c9cb8e0cf38487dfc1d5d3aaecbca3b9024c20b19d87d7125832197b245a882"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.0/lazytailscale_linux_amd64.tar.gz"
+      sha256 "d35b3bc3ebf340b471aa55110766b3bbbe0d1ef800ffa78a863442823791a966"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mogglemoss/lazytailscale/releases/download/v1.0.0/lazytailscale_linux_arm64.tar.gz"
+      sha256 "a82211e65ed19b4c387c5dc6966416a187d7ead40aec09473a445ed0b22162d0"
+    end
+  end
+
+  def install
+    bin.install "lazytailscale"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/lazytailscale --version")
+  end
+end
