@@ -5,21 +5,21 @@
 class Fathom < Formula
   desc "A terminal tide dashboard powered by NOAA"
   homepage "https://github.com/mogglemoss/fathom"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.1/fathom_darwin_amd64.tar.gz"
-      sha256 "45bab173b8cc40293152890cd9ee7cd40750b44dfbf30268b138e91d5ccc8c50"
+      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.2/fathom_darwin_amd64.tar.gz"
+      sha256 "e87bb282865928f78e7f001fe7e2453e8f08be9f9114425a1b7e1b7e86136da2"
 
       define_method(:install) do
         bin.install "fathom"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.1/fathom_darwin_arm64.tar.gz"
-      sha256 "c36d166bd8b67ff385dc0ee2f9a161bc8b2367b1915091e1fc73f869ea07a1ae"
+      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.2/fathom_darwin_arm64.tar.gz"
+      sha256 "6d44f284a0d2a1a3e398b4a2e18b25e31728def84911ffa065a627042dc682e9"
 
       define_method(:install) do
         bin.install "fathom"
@@ -29,15 +29,15 @@ class Fathom < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.1/fathom_linux_amd64.tar.gz"
-      sha256 "099ce0a9434abf5c9475cf8710656a33e89216d1331c1cb1e3bd95b35ca012b8"
+      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.2/fathom_linux_amd64.tar.gz"
+      sha256 "e093df939a8bac206e9e58b46fd1cf5708ea1770d72a7bf62f37c037d8a7204d"
       define_method(:install) do
         bin.install "fathom"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.1/fathom_linux_arm64.tar.gz"
-      sha256 "895e8831d0a616ea3b26150668b5621a9d9923ce510b9aecb4805a6f54fdf4b4"
+      url "https://github.com/mogglemoss/fathom/releases/download/v0.2.2/fathom_linux_arm64.tar.gz"
+      sha256 "c6609f49ffff6fcc93e60f6db55b66662297b4861e37c0a1aeae4fc6be0054f9"
       define_method(:install) do
         bin.install "fathom"
       end
